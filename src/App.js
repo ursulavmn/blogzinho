@@ -1,10 +1,20 @@
-import logo from './logo.svg';
+//meus css
 import './App.css';
+
+//meus imports
+import {BrowserRouter, Routes, Route, Navigate, Router} from 'react-router-dom';
+
 
 function App() {
   return (
     <div className="App">
-      <h1>ola</h1>
+     <BrowserRouter>
+     <div className='container'>
+      <Router>
+        
+      </Router>
+     </div>
+     </BrowserRouter>
     </div>
   );
 }

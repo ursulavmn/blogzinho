@@ -1,3 +1,4 @@
+//css
 import styles from  './About.module.css'
 
 const About = () => {
@@ -6,4 +7,4 @@ const About = () => {
   )
 }
 
-export default About
+export default About 

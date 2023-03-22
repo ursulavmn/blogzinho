@@ -1,5 +1,5 @@
-.footer{
-    height: 250px;
+  .footer{
+    height: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;

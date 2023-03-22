@@ -1,5 +1,7 @@
 //meus css
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 
 //meus imports
 import {BrowserRouter, Routes, Route, Navigate, Router} from 'react-router-dom';
@@ -13,7 +15,7 @@ import Register from './firebase/pages/Register/Register';
 
 function App() {
   return (
-    <div className="App">
+    <div>
      <BrowserRouter>
    <Navbar/>
    <Home/>

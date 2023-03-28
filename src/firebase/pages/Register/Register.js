@@ -3,6 +3,8 @@ import  styles from './Register.module.css'
 
 // meus imports
 import { useState, useEffect} from 'react'
+import { useAuthentication } from '../../../hooks/useAuthentication'
+import { wait } from '@testing-library/user-event/dist/utils'
 
 
 const  Register = () => {
@@ -13,7 +15,10 @@ const  Register = () => {
   const [confirmPassword, setConfirmPassword] = useState ("")
   const [error, setError] = useState ("")
 
-  const handleSubimit = (e) => {
+  const { createUser, error: authError, loading} = useAuthentication()
+
+
+  const handleSubimit = async (e) => {
     e.preventDefault()
     setError("")
     const user = { displayName, email, password}
@@ -23,9 +28,15 @@ const  Register = () => {
       return
     }
  
-   console.log(user);
+    const res = await createUser(user);
 
 }
+
+useEffect (() => {
+  if (authError){
+    setError(authError)
+  }
+},[authError] )
 
 
   return (
@@ -55,7 +66,8 @@ const  Register = () => {
               value={confirmPassword } onChange={(e) => setConfirmPassword(e.target.value)}
             />
           </label>
-          <button className='btn btn-success my-4' >Cadastrar</button>
+          { !loading &&  <button className='btn btn-success my-4'>Cadastrar</button> }
+          {loading && <button className='btn btn-success my-4' disabled  >Aguarde...</button>}
           {error && <p className='error'>{error}</p>}
         </form>
     </div>

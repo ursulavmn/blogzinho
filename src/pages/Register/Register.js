@@ -3,7 +3,7 @@ import  styles from './Register.module.css'
 
 // meus imports
 import { useState, useEffect} from 'react'
-import { useAuthentication } from '../../../hooks/useAuthentication'
+import { useAuthentication } from '../../hooks/useAuthentication'
 import { wait } from '@testing-library/user-event/dist/utils'
 
 
